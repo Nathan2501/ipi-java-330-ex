@@ -1,24 +1,22 @@
 <div class="container">
     <div class="jumbotron">
         <h1>Bienvenue dans l'interface de gestion des <span></span> employés !</h1>
-        <p>Cette application web est paramétrée pour communiquer avec une API REST accessible à l'adresse <code>http://localhost:5367</code>.</p>
-        <p>Il est nécessaire de développer les services webs nécessaires pour que cette application fonctionne. Voici l'ensemble des fonctionnalités :</p>
         <ul class="list-group">
             <li class="list-group-item">
                 <h4 class="list-group-item-heading">1 - Compter le nombre d'employés</h4>
-                <p class="list-group-item-text">A côté du lien <em>Liste des employés</em>, on doit voir apparaître le nombre d'employés. L'appel qui est effectué est <code>GET /employes/count</code>.</p>
+                <p class="list-group-item-text">A côté du lien <em>Liste des employés</em>, on doit voir apparaître le nombre d'employés.</p>
             </li>
             <li class="list-group-item">
                 <h4 class="list-group-item-heading">2 - Afficher un employé</h4>
-                <p class="list-group-item-text">En cliquant <a href="/employes/5">ici</a>, on peut afficher les informations basiques de l'employé d'identifiant 5 (matricule M00001). On consulte l'URL <code>/employes/5</code>. En cliquant <a href="/employes/0">ici</a>, on essaye d'afficher l'employé d'identifiant 0 mais on doit obtenir une erreur 404 car il n'existe pas.</p>
+                <p class="list-group-item-text">En cliquant <a href="/employes/5">ici</a>, on peut afficher les informations basiques de l'employé d'identifiant 5 (matricule M00001). On consulte l'URL <code>/employes/5</code>. En cliquant <a href="/employes/0">ici</a>, on essaye d'afficher l'employé d'identifiant 0 mais on doit être redirigé vers la page d'erreur car il n'existe pas.</p>
             </li>
             <li class="list-group-item">
                 <h4 class="list-group-item-heading">3 - Recherche par matricule</h4>
-                <p class="list-group-item-text">Lorsqu'on recherche le matricule <em>C00019</em> dans la barre de recherche, on tombe sur <em>Sarah Renault</em>. L'URL auquel on accède est <code>/?matricule=C00019</code>. Lorsqu'on recherche un matricule inexistant commme <em>ABCDEF</em>, on obtient une erreur 404.</p>
+                <p class="list-group-item-text">Lorsqu'on recherche le matricule <em>C00019</em> dans la barre de recherche, on tombe sur <em>Sarah Renault</em>. L'URL auquel on accède est <code>/employes?matricule=C00019</code>. Lorsqu'on recherche un matricule inexistant commme <em>ABCDEF</em>, on doit être redirigé vers la page d'erreur.</p>
             </li>
             <li class="list-group-item">
                 <h4 class="list-group-item-heading">4 - Liste des employés</h4>
-                <p class="list-group-item-text">En cliquant <a href="/employes?page=0&size=10&sortDirection=ASC&sortProperty=matricule">ici</a>, tous les employés sont affichés, de manière paginée. Il est possible de changer de page en utilisant les boutons. L'URL utilisé est <code>/employes?page=0&size=10&sortProperty=matricule&sortDirection=ASC</code></p>
+                <p class="list-group-item-text">En cliquant <a href="/employes?page=0&size=10&sortDirection=ASC&sortProperty=matricule">ici</a>, tous les employés sont affichés, de manière paginée. Il est possible de changer de page en utilisant les boutons. L'URL utilisée est <code>/employes?page=0&size=10&sortProperty=matricule&sortDirection=ASC</code></p>
             </li>
             <li class="list-group-item">
                 <h4 class="list-group-item-heading">5 - Création d'un Commercial</h4>
@@ -51,4 +49,5 @@
         </ul>
     </div>
 </div>
+
 
