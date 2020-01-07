@@ -22,11 +22,11 @@ public class ManagerService {
     }
 
     public Manager deleteTechniciens(Long idManager, Long idTechnicien) {
-        Manager m = managerRepository.findOne(idManager);
+        Manager m = managerRepository.findById(idManager).get();
         if(m == null){
             throw new EntityNotFoundException("");
         }
-        Technicien t = technicienRepository.findOne(idTechnicien);
+        Technicien t = technicienRepository.findById(idTechnicien).get();
         if(t == null){
             throw new EntityNotFoundException("");
         }
@@ -41,7 +41,7 @@ public class ManagerService {
     }
 
     public Manager addTechniciens(Long idManager, String matricule) {
-        Manager m = managerRepository.findOne(idManager);
+        Manager m = managerRepository.findById(idManager).get();
         if(m == null){
             throw new EntityNotFoundException("Impossible de trouver le manager d'identifiant " + idManager);
         }

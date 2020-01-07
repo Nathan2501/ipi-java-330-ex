@@ -14,7 +14,7 @@ public class CommercialService {
     private CommercialRepository commercialRepository;
 
     public Commercial findById(Long id){
-        return commercialRepository.findOne(id);
+        return commercialRepository.findById(id).get();
     }
 
     public Commercial creerEmploye(Commercial e) {
