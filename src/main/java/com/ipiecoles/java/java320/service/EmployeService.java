@@ -20,7 +20,7 @@ public class EmployeService {
     private EmployeRepository employeRepository;
 
     public Employe findById(Long id){
-        return employeRepository.findOne(id);
+        return employeRepository.findById(id).get();
     }
 
     public Long countAllEmploye() {
@@ -28,20 +28,20 @@ public class EmployeService {
     }
 
     public void deleteEmploye(Long id){
-        employeRepository.delete(id);
+        employeRepository.deleteById(id);
     }
 
     public <T extends Employe> T creerEmploye(T e) {
         return employeRepository.save(e);
     }
 
-    public <T extends Employe> T updateEmploye(Long id, T employe) {
+    public <T extends Employe> T updateEmploye(T employe) {
         return employeRepository.save(employe);
     }
 
     public Page<Employe> findAllEmployes(Integer page, Integer size, String sortProperty, String sortDirection) {
-        Sort sort = new Sort(new Sort.Order(Sort.Direction.fromString(sortDirection),sortProperty));
-        Pageable pageable = new PageRequest(page,size,sort);
+        Sort sort = Sort.by(new Sort.Order(Sort.Direction.fromString(sortDirection),sortProperty));
+        Pageable pageable = PageRequest.of(page,size,sort);
         return employeRepository.findAll(pageable);
     }
 
